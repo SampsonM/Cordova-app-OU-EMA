@@ -1,0 +1,29 @@
+{
+  "name": "com.megamax.sale.e4099860",
+  "displayName": "MegaMaxSaleE4099860",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^10.1.2",
+    "cordova-browser": "^6.0.0"
+  },
+  "cordova": {
+    "platforms": [
+      "android",
+      "browser"
+    ],
+    "plugins": {}
+  },
+  "dependencies": {
+    "concurrently": "^7.1.0",
+    "cross-env": "^7.0.3",
+    "wait-on": "^6.0.1"
+  }
+}
