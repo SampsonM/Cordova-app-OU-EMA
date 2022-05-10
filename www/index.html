@@ -34,23 +34,23 @@
 				<!-- user id -->
 				<div class="uk-padding-small uk-padding-remove-horizontal uk-padding-remove-top">
 					<label for="userId">ID:</label>
-					<input id="userId" type="text">
+					<input id="userId" type="text" autocomplete="username">
 				</div>
 
 				<!-- user password -->
 				<div class="uk-padding-small uk-padding-remove-horizontal uk-padding-remove-top">
 					<label for="userPassword">Password:</label>
-					<input id="userPassword" type="password">
+					<input id="userPassword" type="password" autocomplete="current-password">
 				</div>
 
 				<!-- client number -->
 				<div class="uk-padding-small uk-padding-remove-horizontal uk-padding-remove-top">
-					<label for="clientNumber">Client:</label>
-					<input id="clientNumber" type="number">
+					<label for="clientId">Client:</label>
+					<input id="clientId" type="number">
 				</div>
 
 				<!-- begin order -->
-				<button type="button" class="uk-button-primary" onclick="controller.beginOrder()">Begin order</button>
+				<button type="button" class="uk-button-primary" onclick="interfaceController.beginOrder()">Begin order</button>
 			</fieldset>
 
 			<fieldset>
@@ -80,12 +80,14 @@
 
 				<!-- prev, next btn -->
 				<div class=" uk-padding-small uk-padding-remove-horizontal uk-padding-remove-top">
-					<button class="uk-button-default" type="button" onclick="controller.previousWidget()">Previous Widget</button>
-					<button class="uk-button-default" type="button" onclick="controller.nextWidget()">Next Widget</button>
+					<button class="uk-button-default" type="button" onclick="interfaceController.previousWidget()">Previous
+						Widget</button>
+					<button class="uk-button-default" type="button" onclick="interfaceController.nextWidget()">Next
+						Widget</button>
 				</div>
 
 				<!-- add to order -->
-				<button class="uk-button-primary" type="button" onclick="controller.addToOrder()">Add to order</button>
+				<button class="uk-button-primary" type="button" onclick="interfaceController.addToOrder()">Add to order</button>
 			</fieldset>
 
 			<fieldset>
@@ -93,8 +95,15 @@
 
 				<!-- client name, client address -->
 				<div class="uk-text-left uk-padding-small uk-padding-remove-horizontal uk-padding-remove-top">
-					<p id="clientName" class="uk-margin-remove">clients name</p>
-					<p id="clientAddress" class="uk-margin-remove">client address</p>
+
+					<div class="uk-padding-small uk-padding-remove-horizontal uk-padding-remove-top"">
+						<p class=" uk-margin-remove">Client: </p>
+						<p id="clientName" class="uk-margin-remove"></p>
+					</div>
+					<div>
+						<p class="uk-margin-remove">Client address:</p>
+						<p id="clientAddress" class="uk-margin-remove"></p>
+					</div>
 				</div>
 
 				<!-- order item details -->
@@ -105,11 +114,6 @@
 						<th>Quantity</th>
 						<th>Cost</th>
 					</tr>
-					<tr>
-						<td>self tapping screws</td>
-						<td>1</td>
-						<td>0.10p</td>
-					</tr>
 				</table>
 
 				<!-- subtotal, vat, total -->
@@ -117,15 +121,15 @@
 					class="uk-text-left uk-padding-small uk-padding-remove-horizontal uk-padding-remove-top">
 					<tr>
 						<th>Subtotal</th>
-						<td>0.10</td>
+						<td id="subtotal">0 GBP</td>
 					</tr>
 					<tr>
 						<th>VAT</th>
-						<td>0.02</td>
+						<td id="vat">0 GBP</td>
 					</tr>
 					<tr>
 						<th>Total</th>
-						<td>0.12</td>
+						<td id="total">0 GBP</td>
 					</tr>
 				</table>
 
@@ -135,7 +139,7 @@
 				</div>
 
 				<!-- end order -->
-				<button class="uk-button-danger" type="button" onclick="controller.endOrder()">End order</button>
+				<button class="uk-button-danger" type="button" onclick="interfaceController.endOrder()">End order</button>
 			</fieldset>
 		</form>
 
@@ -144,7 +148,13 @@
 	</div>
 
 	<script type="text/javascript" src="cordova.js"></script>
-	<script type="text/javascript" src="js/helpers.js"></script>
+	<script type="text/javascript" src="js/utils/types.js"></script>
+	<script type="text/javascript" src="js/utils/helpers.js"></script>
+	<script type="text/javascript" src="js/controllers/ClientController.js"></script>
+	<script type="text/javascript" src="js/controllers/MapController.js"></script>
+	<script type="text/javascript" src="js/controllers/OrderController.js"></script>
+	<script type="text/javascript" src="js/controllers/WidgetController.js"></script>
+	<script type="text/javascript" src="js/controllers/InterfaceController.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </body>
 
